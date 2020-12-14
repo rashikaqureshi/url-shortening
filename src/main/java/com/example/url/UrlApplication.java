@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.example.url;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class URLApplication {
+public class UrlApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(URLApplication.class, args);
+		SpringApplication.run(UrlApplication.class, args);
 	}
 
 }

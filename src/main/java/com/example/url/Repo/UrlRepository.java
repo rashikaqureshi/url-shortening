@@ -1,11 +1,8 @@
-package repo;
+package com.example.url.Repo;
 
-import lombok.var;
-import models.Url;
+import com.example.url.models.Url;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
-
 public interface UrlRepository extends JpaRepository<Url,Long> {
-    Url findByLongUrlAndClientId(String longUrl);
+    Url findByLongUrlAndClientId(String longUrl,String clientId);
 }

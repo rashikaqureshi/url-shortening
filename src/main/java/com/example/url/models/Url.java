@@ -1,6 +1,4 @@
-package models;
-
-import lombok.Data;
+package com.example.url.models;
 
 import javax.persistence.*;
 

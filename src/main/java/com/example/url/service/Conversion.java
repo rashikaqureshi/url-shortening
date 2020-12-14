@@ -1,4 +1,4 @@
-package service;
+package com.example.url.service;
 
 import org.springframework.stereotype.Service;
 

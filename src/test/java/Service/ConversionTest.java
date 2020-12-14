@@ -3,7 +3,7 @@ package Service;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
-import service.Conversion;
+import com.example.url.service.Conversion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 @RunWith(MockitoJUnitRunner.class)

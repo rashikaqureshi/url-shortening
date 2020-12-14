@@ -1,10 +1,11 @@
-package controller;
+package com.example.url.controller;
 
-import dto.LongUrlRequest;
+import com.example.url.dto.LongUrlRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.UrlService;
+import com.example.url.service.UrlService;
 
 import java.net.URI;
 @RestController
@@ -13,12 +14,12 @@ public class UrlController {
 
 
         private final UrlService urlService;
-
+        @Autowired
         public UrlController(UrlService urlService) {
             this.urlService = urlService;
         }
 
-        @PostMapping("convertToShortUrl")
+        @PostMapping(value="/convertToShortUrl")
         public String convertToShortUrl(@RequestBody LongUrlRequest request) throws Exception {
             return urlService.convertToShortUrl(request);
         }

@@ -1,16 +1,21 @@
-package service;
+package com.example.url.service;
 
-import dto.LongUrlRequest;
+import com.example.url.Repo.UrlRepository;
+import com.example.url.dto.LongUrlRequest;
 
-import models.Url;
+import com.example.url.models.Url;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
-
+@Service
 public class UrlService {
-    private final repo.UrlRepository urlRepository;
-    private final Conversion conversion;
 
-    public UrlService(repo.UrlRepository urlRepository, Conversion conversion) {
+
+    private final UrlRepository urlRepository;
+    private final Conversion conversion;
+@Autowired
+    public UrlService(UrlRepository urlRepository, Conversion conversion) {
         this.urlRepository = urlRepository;
         this.conversion = conversion;
     }
@@ -19,7 +24,7 @@ public class UrlService {
         Url url = new Url();
         url.setLongUrl(request.getLongUrl());
         url.setClientId(request.getClientId());
-        Url existingUrl =urlRepository.findByLongUrlAndClientId(request.getLongUrl());
+        Url existingUrl =urlRepository.findByLongUrlAndClientId(request.getLongUrl(),request.getClientId());
        if(existingUrl!=null)
        {
            return conversion.encode(existingUrl.getId());

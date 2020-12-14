@@ -1,14 +1,14 @@
 package Service;
 
-import dto.LongUrlRequest;
-import models.Url;
+import com.example.url.dto.LongUrlRequest;
+import com.example.url.models.Url;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import service.Conversion;
-import service.UrlService;
+import com.example.url.service.Conversion;
+import com.example.url.service.UrlService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;

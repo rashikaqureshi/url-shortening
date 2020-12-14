@@ -1,6 +1,4 @@
-package dto;
-
-import lombok.Data;
+package com.example.url.dto;
 
 
 public class LongUrlRequest {
