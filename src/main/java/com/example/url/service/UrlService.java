@@ -37,9 +37,9 @@ public class UrlService {
     }
 
     public String getOriginalUrl(String shortUrl) {
-        long id = conversion.decode(shortUrl);
+        long id = conversion.decodeShortUrl(shortUrl);
         Url entity = urlRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("There is no entity with " + shortUrl));
+                .orElseThrow(() -> new EntityNotFoundException("There is no entry in database  with " + shortUrl));
 
 
 

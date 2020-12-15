@@ -27,7 +27,7 @@ public class UrlController {
         @GetMapping(value = "get-original-url")
         public ResponseEntity<String> getAndRedirect(@RequestParam String shortUrl) {
             String url = urlService.getOriginalUrl(shortUrl);
-            return new ResponseEntity<>(url,HttpStatus.OK);
+            return new ResponseEntity<>(url,HttpStatus.TEMPORARY_REDIRECT);
         }
     }
 

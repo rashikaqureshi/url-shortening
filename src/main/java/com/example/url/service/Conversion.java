@@ -23,13 +23,12 @@ public class Conversion {
         return encodedString.reverse().toString();
     }
 
-    public long decode(String input) {
+    public long decodeShortUrl(String input) {
          char[] characters = input.toCharArray();
         long length = characters.length;
 
         long decoded = 0;
 
-        //counter is used to avoid reversing input string
         long counter = 1;
         for (int i = 0; i < length; i++) {
             decoded += allowedString.indexOf(characters[i]) * Math.pow(base, length - counter);
