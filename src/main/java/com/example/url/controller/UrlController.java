@@ -24,12 +24,10 @@ public class UrlController {
             return urlService.convertToShortUrl(request);
         }
 
-        @GetMapping(value = "get-original-url/{shortUrl}")
-        public ResponseEntity<Void> getAndRedirect(@PathVariable String shortUrl) {
+        @GetMapping(value = "get-original-url")
+        public ResponseEntity<String> getAndRedirect(@RequestParam String shortUrl) {
             String url = urlService.getOriginalUrl(shortUrl);
-            return ResponseEntity.status(HttpStatus.FOUND)
-                    .location(URI.create(String.valueOf(url)))
-                    .build();
+            return new ResponseEntity<>(url,HttpStatus.OK);
         }
     }
 
