@@ -3,9 +3,8 @@ package com.example.url.models;
 import javax.persistence.*;
 
 
-
 @Entity
-@Table(name="url")
+@Table(name = "url")
 public class Url {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +13,16 @@ public class Url {
     private String longUrl;
     @Column(nullable = false)
     private String clientId;
+    @Column(columnDefinition = "long default 0")
+    private Long count = Long.valueOf(0);
+
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
 
     public String getClientId() {
         return clientId;
@@ -24,7 +33,6 @@ public class Url {
     }
 
 
-
     public String getLongUrl() {
         return longUrl;
     }
@@ -32,7 +40,6 @@ public class Url {
     public void setLongUrl(String longUrl) {
         this.longUrl = longUrl;
     }
-
 
 
     public long getId() {

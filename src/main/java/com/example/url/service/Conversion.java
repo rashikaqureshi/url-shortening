@@ -34,6 +34,7 @@ public class Conversion {
             decoded += allowedString.indexOf(characters[i]) * Math.pow(base, length - counter);
             counter++;
         }
+
         return decoded;
     }
 }

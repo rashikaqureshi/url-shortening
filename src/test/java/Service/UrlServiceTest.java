@@ -1,5 +1,6 @@
 package Service;
 
+import com.example.url.Repo.UrlRepository;
 import com.example.url.dto.LongUrlRequest;
 import com.example.url.models.Url;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,8 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class UrlServiceTest {
     @Mock
-    repo.UrlRepository mockUrlRepository;
+
+    UrlRepository mockUrlRepository;
 
     @Mock
     Conversion mockConversion;
@@ -41,8 +43,8 @@ public class UrlServiceTest {
     }
 
     @Test
-    public void getOriginalUrlTest() {
-        when(mockConversion.decode("h")).thenReturn((long) 7);
+    public void getOriginalUrlTest() throws Exception {
+        when(mockConversion.decodeShortUrl("h")).thenReturn((long) 7);
 
         Url url = new Url();
         url.setLongUrl("https://upsconline.nic.in/mainmenu2.phphttps://upsconlinenic.in/mainmenu2.php");
